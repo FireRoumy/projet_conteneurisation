@@ -1,0 +1,72 @@
+version: "2.2"
+
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: mosquitto
+    volumes:
+      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    restart: always
+    ports:
+      - "1883:1883"
+    networks:
+      - conteneurs
+
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    restart: always
+    ports:
+      - "8086:8086"
+    env_file:
+      - influxdb.env
+    networks:
+      - conteneurs
+    volumes:
+      - influxdb-data:/var/lib/influxdb #remplacer quand dans AWS
+ 
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - influxdb.env
+    networks:
+      - conteneurs
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+    depends_on:
+      - influxdb
+
+  mqttsubscriber:
+    build: ./MQTTSubscriber
+    container_name: mqttsubscriber
+    restart: always
+    depends_on:
+      - mosquitto
+    networks:
+      - conteneurs
+
+
+  mqttpublisher:
+    build: ./MQTTPublisher
+    container_name: mqttpublisher
+    restart: always
+    depends_on:
+      - mosquitto
+    networks:
+      - conteneurs
+
+
+networks:
+  conteneurs:
+    
+volumes:
+  influxdb-data:
+  grafana-data:
+

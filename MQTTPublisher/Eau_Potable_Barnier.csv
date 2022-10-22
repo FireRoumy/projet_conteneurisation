@@ -1,0 +1,25 @@
+Ref;Indicateurs;2 009;2 010;2 011;2 012;2 013;2 014;2 015;2 016;2 017;2 018
+D101.0;Estimation du nombre d'habitants desservis;1 362 668;1 281 869;1 286 543;1 290 883;1 326 438;1 333 032;1 324 807;1 324 807;1 324 807;1 351 488
+D102.0;Prix TTC du service au m3 pour 120 m3 au 01/01/N+1;1,7897;2,03;2,09625;2,2008;2,131;2,1608;1,8237;1,81;1,8188;1,8037
+P101.1;Taux de conformité des prélèvements sur les eaux distribuées, réalisés au titre du contrôle sanitaire par rapport aux limites de qualité pour ce qui concerne la microbiologie;100%;100%;100%;100%;99,60%;99,86%;99,90%;99,95%;100%;99,9
+P102.1;Taux de conformité des prélèvements sur les eaux distribuées, réalisés au titre du contrôle sanitaire par rapport aux limites de qualité pour ce qui concerne les paramètres physico-chimiques;100%;100%;100%;100%;100%;99,95%;100%;100%;100%;100%
+P103.2;Indice de connaissance et de gestion patrimoniale des réseaux d'eau potable;NR;NR;NR;NR;100;100;100;100;110;120
+P104.3;Rendement du réseau de distribution;NR;87%;81,40%;81,70%;79,70%;77,37%;78%;85%;84%;85,20%
+P105.3;Indice linéaire des volumes non comptés en m3/km/jour;18,1;18,1;18,1;NR;NR;15,4;15,8;9,62;10,5;9,5
+P106.3;Indice linéaire de perte en réseau en m3/km/jour;7,92;7,92;12,6;12,4;13,5;14,4;14,5;9,1;9,9;9
+P107.2;Taux moyen de renouvellement des réseaux d'eau potable  (calculé sur les 5 dernières années);0,60%;0,66%;0,55%;0,55%;0,55%;0,52%;0,49%;0,51%;0,56%;0,68
+P109.0;Montant des abandons de créances ou des versements à un fond de solidarité (en €);NR;NR;353 000;NR;397 868;147 488;136 563;237 871;291 374;308 708
+P151.1;Taux d'occurrence des interventions de service non programmées nombre pour 1 000 abonnés;NR;NR;NR;NR;NR;NR;0,76;0,89;1,11;0,99
+P152.1;Taux de respect du délais maximal d'ouverture des branchements pour les nouveaux abonnés;NR;NR;NR;NR;NR;NR;100%;100%;100%;100%
+P154.0;Taux d'impayés sur les factures d'eau de l'année précédente;NR;NR;NR;NR;NR;NR;NR;1,43%;1,78%;1,65%
+P155.1;Taux de réclamations pour 1000 abonnés;NR;NR;NR;NR;NR;NR;0,24%;0,25%;0,27%;0,87%
+;Volumes exhaurés;NR;NR;NR;NR;NR;94 964 115;95 875 022;90 502 463;90 142 150;90 406 987
+;Volumes produits;;98 141 554;96 421 117;96 064 352;95 309 799;93 540 446;93 453 088;87 800 202;87 573 476;87 616 990
+; Volumes achetés ;;1 600 911;1 857 957;2 406 560;2 327 925;2 118 154;2 351 617;2 450 543;2 674 644;3 152 707
+;Volumes vendus;;58 839;112 338;202 704;195 228;152 582;235 296;218 822;190 773;149 112
+;Volumes introduits au réseau;;99 678 306;98 166 736;98 268 177;97 442 496;95 505 712;95 569 354;90 031 923;90 057 347;90 620 585
+;Volumes consommés;;86 801 078;79 912 745;80 270 241;77 631 721;73 862 933;74 151 664;76 493 347;75 387 228;77 199 310
+;Volumes perdus ou volés;;12 877 228;18 253 991;17 987 073;19 810 775;21 642 779;21 366 245;13 538 076;14 581 440;13 421 275
+;Nombre d'abonnés;333 930;337 349;342 820;350 279;353 024;361 501;360 002;359 548;362 374;367 093
+;Nombre de compteurs en service;333 894;335 718;342 313;347 353;353 733;357 268;356 669;351 761;356 426;364 875
+;Linéaire de canalisations;3 879;3 950;3 982;4 034;4 045;4 062;4 051;4 055;4 057;4 082
