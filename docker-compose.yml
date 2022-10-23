@@ -50,7 +50,7 @@ services:
         condition: any
   
   mqttsubscriber:
-    image: etiennetriomphe/projetconteneurisation:2.0.0
+    image: etiennetriomphe/projetconteneurisationmqttsubscriber:1.0.0
     depends_on:
       - mosquitto
     networks:
@@ -62,7 +62,7 @@ services:
 
 
   mqttpublisher:
-    image: etiennetriomphe/projetconteneurisation:1.0.0
+    image: etiennetriomphe/projetconteneurisationmqttpublisher:1.0.0
     depends_on:
       - mosquitto
     networks:
