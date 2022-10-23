@@ -42,9 +42,9 @@ services:
       - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
     depends_on:
       - influxdb
-
+  
   mqttsubscriber:
-    build: ./MQTTSubscriber
+    image: etiennetriomphe/projetconteneurisation:2.0.0
     container_name: mqttsubscriber
     restart: always
     depends_on:
@@ -54,7 +54,7 @@ services:
 
 
   mqttpublisher:
-    build: ./MQTTPublisher
+    image: etiennetriomphe/projetconteneurisation:1.0.0
     container_name: mqttpublisher
     restart: always
     depends_on:
@@ -63,8 +63,10 @@ services:
       - conteneurs
 
 
+
 networks:
   conteneurs:
+    attachable: true
     
 volumes:
   influxdb-data:
