@@ -4,19 +4,19 @@ version: "3.9"
 services:
   mosquitto:
     image: eclipse-mosquitto:latest
-    container_name: mosquitto
     volumes:
-      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
-    restart: always
+      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf    
     ports:
       - "1883:1883"
     networks:
       - conteneurs
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: any
 
   influxdb:
-    image: influxdb:latest
-    container_name: influxdb
-    restart: always
+    image: influxdb:latest 
     ports:
       - "8086:8086"
     env_file:
@@ -25,11 +25,13 @@ services:
       - conteneurs
     volumes:
       - influxdb-data:/var/lib/influxdb #remplacer quand dans AWS
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: any
  
   grafana:
     image: grafana/grafana
-    container_name: grafana
-    restart: always
     ports:
       - "3000:3000"
     env_file:
@@ -42,25 +44,33 @@ services:
       - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
     depends_on:
       - influxdb
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: any
   
   mqttsubscriber:
     image: etiennetriomphe/projetconteneurisation:2.0.0
-    container_name: mqttsubscriber
-    restart: always
     depends_on:
       - mosquitto
     networks:
       - conteneurs
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: any
 
 
   mqttpublisher:
     image: etiennetriomphe/projetconteneurisation:1.0.0
-    container_name: mqttpublisher
-    restart: always
     depends_on:
       - mosquitto
     networks:
       - conteneurs
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: any
 
 
 
