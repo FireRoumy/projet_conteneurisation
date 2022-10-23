@@ -15,8 +15,7 @@ client_id = "MQTTSubscriber"
 # username = 'emqx'
 # password = 'public'
 #InfluxDB
-token = "bmDLXMwdrf95qc8mMhoTm-nZLcDnYNge-j7vRWgicWHFAC5Rz4dGfhWEr6_B8hFATArCyvtJ3JQespdURJ8Psg=="
-#token = "'wj8KipGh40m2xEjO4bQwTV50QjXGLX-A592NeBQ5ETHOs6vMnI-WXXmtEUkP32iRfcXRhxMcmAvD2QNoCmdoYQ=='"
+token = "'bmDLXMwdrf95qc8mMhoTm-nZLcDnYNge-j7vRWgicWHFAC5Rz4dGfhWEr6_B8hFATArCyvtJ3JQespdURJ8Psg=='"
 org = "grandlyon"
 bucket = "grandlyon-data"
 

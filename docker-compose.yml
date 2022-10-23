@@ -5,7 +5,7 @@ services:
   mosquitto:
     image: eclipse-mosquitto:latest
     volumes:
-      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf    
+      - /efs/mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf        
     ports:
       - "1883:1883"
     networks:
@@ -24,7 +24,7 @@ services:
     networks:
       - conteneurs
     volumes:
-      - influxdb-data:/var/lib/influxdb #remplacer quand dans AWS
+      - /efs/db:/var/lib/influxdb
     deploy:
       replicas: 2
       restart_policy:
@@ -39,9 +39,9 @@ services:
     networks:
       - conteneurs
     volumes:
-      - grafana-data:/var/lib/grafana
-      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
-      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - /efs/grafana/lib:/var/lib/grafana
+      - /efs/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - /efs/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
     depends_on:
       - influxdb
     deploy:
@@ -50,7 +50,7 @@ services:
         condition: any
   
   mqttsubscriber:
-    image: etiennetriomphe/projetconteneurisationmqttsubscriber:1.0.0
+    image: etiennetriomphe/projetconteneurisationmqttsubscriber:1.0.1
     depends_on:
       - mosquitto
     networks:
@@ -78,7 +78,4 @@ networks:
   conteneurs:
     attachable: true
     
-volumes:
-  influxdb-data:
-  grafana-data:
 
